@@ -45,6 +45,12 @@
 
     <div class="container mt-4">
         <h2>Cardápio</h2>
+
+        <div class="mb-3">
+           <input type="text" id="pesquisa-prato" class="form-control" placeholder="Pesquisar prato por nome...">
+        </div>
+
+
         <div id="lista-pratos" class="row">
             <!-- Pratos serão carregados aqui via JS -->
         </div>
@@ -60,6 +66,16 @@
 <footer class="bg-dark text-white text-center py-3 mt-5">
   <p>© 2025 Cardápio Interativo - Todos os direitos reservados.</p>
 </footer>
+
+<script>
+    exibirPratos();
+
+    document.getElementById('pesquisa-prato').addEventListener('input', function() {
+        const filtro = this.value;
+        exibirPratos(filtro);
+    });
+</script>
+
 
 </body>
 </html>

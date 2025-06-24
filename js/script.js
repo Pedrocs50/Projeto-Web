@@ -84,9 +84,9 @@ function adicionarPrato() {
         reader.onload = function(e) {
             salvarComImagem(e.target.result);
         };
-        reader.readAsDataURL(inputImagem.files[0]); // converte para base64
+        reader.readAsDataURL(inputImagem.files[0]); 
     } else {
-        salvarComImagem(null); // sem imagem
+        salvarComImagem(null); // sem imagem no prato
     }
 }
 
@@ -242,4 +242,32 @@ function editarPrato(index) {
         salvarPratos(pratos);
         carregarListaAdmin();
     }
+}
+
+function exibirPratos(filtro = '') {
+    const lista = document.getElementById('lista-pratos');
+    if (!lista) return;
+
+    lista.innerHTML = '';
+    const pratos = getPratos();
+
+    pratos.forEach((prato, index) => {
+        if (prato.nome.toLowerCase().includes(filtro.toLowerCase())) {
+            const card = document.createElement('div');
+            card.className = 'col-md-4';
+
+            card.innerHTML = `
+                <div class="card mb-3">
+                    <img src="${prato.imagem || 'assets/imagens/placeholder.jpg'}" class="card-img-top" alt="${prato.nome}">
+                    <div class="card-body">
+                        <h5 class="card-title">${prato.nome}</h5>
+                        <p class="card-text">R$ ${prato.preco.toFixed(2)}</p>
+                        <button class="btn btn-primary" onclick="adicionarCarrinho(${index})">Adicionar ao Carrinho</button>
+                        <button class="btn btn-warning" onclick="favoritarPrato(${index})">Favoritar</button>
+                    </div>
+                </div>
+            `;
+            lista.appendChild(card);
+        }
+    });
 }
