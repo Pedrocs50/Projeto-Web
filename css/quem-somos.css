@@ -10,10 +10,16 @@ main {
 }
 
 footer {
-  background-color: #343a40;
-  color: white;
-  text-align: center;
-  padding: 15px 0;
+  background-color: white;
+  color: #333; 
+  text-align: left;
+  padding: 1rem 1rem; 
+  border-top: 2px solid #f3c6e5;
+  flex-shrink: 0; 
+}
+
+footer .mb-2 {
+  color:#CE44E4;
 }
 
 .navbar {

@@ -8,21 +8,27 @@ html, body {
 body {
   display: flex;
   flex-direction: column;
-  min-height: 100vh; /* garante pelo menos a altura da viewport */
+  min-height: 100vh; 
 }
 
 .container {
-  flex: 1 0 auto; /* permite crescer, mas não força encolher */
+  flex: 1 0 auto;
   padding-bottom: 20px;
 }
 
 footer {
-  background-color: #343a40;
-  color: white;
-  text-align: center;
-  padding: 15px 0;
-  flex-shrink: 0; /* evita encolher */
+  background-color: white;
+  color: #333; 
+  text-align: left;
+  padding: 1rem 1rem; 
+  border-top: 2px solid #f3c6e5;
+  flex-shrink: 0; 
 }
+
+footer .mb-2 {
+  color:#CE44E4;
+}
+
 
 .navbar {
     background-color: white;
@@ -46,4 +52,8 @@ footer {
     object-fit: cover;
     width: 100%;
     border-radius: 8px;
+}
+
+.navbar-toggler-icon {
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='black' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
 }
