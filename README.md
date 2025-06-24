@@ -15,6 +15,4 @@ Pode adicionar e remover itens de um carrinho de pedidos local, e ver o total ac
 | Bootstrap  | ✅ |
 | Interface completamente navegável(com navbars)  | ✅ |
 | localStorage  | ✅ |
-| Modals  | ✅ |
-| Modals  | ✅ |
-| Modals  | ✅ |
+| Duas funcionalidades de consulta  | ✅ |
