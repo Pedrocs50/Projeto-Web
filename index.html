@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Cardápio Interativo - Home</title>
+  <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+  />
+  <link rel="stylesheet" href="./css/style.css" />
+</head>
+<body>
+
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-dark shadow">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">WhiskIt</a>
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#navbarNav"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item">
+          <a class="nav-link active" href="index.html">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="cardapio.html">Menu</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="carrinho.html">Meu Pedido</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="quemsomos.html">Quem Somos</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="carrinho.html">Carrinho</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- Conteúdo Principal -->
+<div class="container mt-4">
+
+  <!-- Carrossel Bootstrap -->
+  <div id="carouselExampleIndicators" class="carousel slide mb-4" data-bs-ride="carousel">
+    <div class="carousel-indicators">
+      <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+      <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+      <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+    </div>
+    <div class="carousel-inner rounded shadow">
+      <div class="carousel-item active">
+        <img src="./assets/imagens/banner1.png" class="d-block w-100" alt="Banner 1" />
+      </div>
+      <div class="carousel-item">
+        <img src="./assets/imagens/banner2.png" class="d-block w-100" alt="Banner 2" />
+      </div>
+      <div class="carousel-item">
+        <img src="./assets/imagens/banner3.png" class="d-block w-100" alt="Banner 3" />
+      </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Anterior</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Próximo</span>
+    </button>
+  </div>
+
+  <!-- Botão para abrir modal -->
+  <div class="text-center mb-4">
+    <button
+      type="button"
+      class="btn btn-primary btn-lg"
+      data-bs-toggle="modal"
+      data-bs-target="#contatoModal"
+    >
+      Contatos da Loja
+    </button>
+  </div>
+
+  <h2 class="mb-4 text-center">MAIS VENDIDOS</h2>
+
+  <div class="row g-4">
+    <!-- Card 1 -->
+    <div class="col-md-4">
+      <div class="card h-100 shadow">
+        <img src="./assets/imagens/cupcake.png" class="card-img-top" alt="Item 1" />
+        <div class="card-body">
+          <h5 class="card-title">Cupcake</h5>
+          <p class="card-text">R$ 12,00</p>
+          <a href="cardapio.html" class="btn btn-success w-100">Ver Mais</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Card 2 -->
+    <div class="col-md-4">
+      <div class="card h-100 shadow">
+        <img src="./assets/imagens/bololaranja.png" class="card-img-top" alt="Item 2" />
+        <div class="card-body">
+          <h5 class="card-title">Bolo de Laranja</h5>
+          <p class="card-text">R$ 20,00</p>
+          <a href="cardapio.html" class="btn btn-success w-100">Ver Mais</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Card 3 -->
+    <div class="col-md-4">
+      <div class="card h-100 shadow">
+        <img src="./assets/imagens/donout.png" class="card-img-top" alt="Item 3" />
+        <div class="card-body">
+          <h5 class="card-title">Donut</h5>
+          <p class="card-text">R$ 12,00</p>
+          <a href="cardapio.html" class="btn btn-success w-100">Ver Mais</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal de Contatos -->
+<div
+  class="modal fade"
+  id="contatoModal"
+  tabindex="-1"
+  aria-labelledby="contatoModalLabel"
+  aria-hidden="true"
+>
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="contatoModalLabel">Contatos da WhiskIt</h5>
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="modal"
+          aria-label="Fechar"
+        ></button>
+      </div>
+      <div class="modal-body">
+        <p><strong>Telefone:</strong> (12) 988556871</p>
+        <p><strong>Email:</strong> pedrommachado256@gmail.com</p>
+        <p><strong>Endereço:</strong> Rua das Flores, 123 - Centro, Cidade</p>
+        <p><strong>WhatsApp:</strong> (12) 988556871</p>
+      </div>
+      <div class="modal-footer">
+        <button
+          type="button"
+          class="btn btn-secondary"
+          data-bs-dismiss="modal"
+        >
+          Fechar
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Bootstrap JS Bundle -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
