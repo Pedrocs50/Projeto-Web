@@ -47,8 +47,16 @@
         <h2>Cardápio</h2>
 
         <div class="mb-3">
-           <input type="text" id="pesquisa-prato" class="form-control" placeholder="Pesquisar prato por nome...">
+          <input type="text" id="pesquisa-prato" class="form-control mb-2" placeholder="Pesquisar prato por nome...">
+          <select id="filtro-categoria" class="form-select">
+              <option value="">Todas as categorias</option>
+              <option value="Entrada">Entrada</option>
+              <option value="Prato Principal">Prato Principal</option>
+              <option value="Sobremesa">Sobremesa</option>
+              <option value="Bebida">Bebida</option>
+          </select>
         </div>
+
 
 
         <div id="lista-pratos" class="row">
@@ -74,6 +82,11 @@
         const filtro = this.value;
         exibirPratos(filtro);
     });
+
+    exibirPratos();
+
+    document.getElementById('pesquisa-prato').addEventListener('input', exibirPratos);
+    document.getElementById('filtro-categoria').addEventListener('change', exibirPratos);
 </script>
 
 

@@ -244,15 +244,21 @@ function editarPrato(index) {
     }
 }
 
-function exibirPratos(filtro = '') {
+function exibirPratos() {
     const lista = document.getElementById('lista-pratos');
     if (!lista) return;
+
+    const filtroNome = document.getElementById('pesquisa-prato')?.value.toLowerCase() || '';
+    const filtroCategoria = document.getElementById('filtro-categoria')?.value || '';
 
     lista.innerHTML = '';
     const pratos = getPratos();
 
     pratos.forEach((prato, index) => {
-        if (prato.nome.toLowerCase().includes(filtro.toLowerCase())) {
+        const nomeCorresponde = prato.nome.toLowerCase().includes(filtroNome);
+        const categoriaCorresponde = filtroCategoria === '' || prato.categoria === filtroCategoria;
+
+        if (nomeCorresponde && categoriaCorresponde) {
             const card = document.createElement('div');
             card.className = 'col-md-4';
 
@@ -271,3 +277,4 @@ function exibirPratos(filtro = '') {
         }
     });
 }
+

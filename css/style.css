@@ -40,3 +40,10 @@ footer {
     background-color: #973499;
     border-color: #fff7f0;
 }
+
+.card-img-top {
+    height: 200px;
+    object-fit: cover;
+    width: 100%;
+    border-radius: 8px;
+}
