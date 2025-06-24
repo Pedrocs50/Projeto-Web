@@ -1,22 +1,27 @@
 html, body {
-    height: 100%;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    flex-direction: column;
-    background-color: #fff7f0;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  background-color: #fff7f0;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; /* garante pelo menos a altura da viewport */
 }
 
 .container {
-    flex: 1;
+  flex: 1 0 auto; /* permite crescer, mas não força encolher */
+  padding-bottom: 20px;
 }
 
 footer {
-    margin-top: auto;
-    background-color: #343a40;
-    color: white;
-    text-align: center;
-    padding: 15px 0;
+  background-color: #343a40;
+  color: white;
+  text-align: center;
+  padding: 15px 0;
+  flex-shrink: 0; /* evita encolher */
 }
 
 .navbar {
@@ -29,4 +34,9 @@ footer {
 }
 .navbar .nav-link {
     color: black !important;
+}
+
+.btn {
+    background-color: #973499;
+    border-color: #fff7f0;
 }

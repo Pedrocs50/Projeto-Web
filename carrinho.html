@@ -9,32 +9,53 @@
 </head>
 <body>
 
-    <!-- Navbar -->
+<!-- Navbar -->
 <nav class="navbar navbar-expand-lg navbar-dark shadow">
   <div class="container-fluid">
     <a class="navbar-brand" href="#">WhiskIt</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#navbarNav"
+    >
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav ms-auto">
-        <li class="nav-item"><a class="nav-link active" href="index.html">Home</a></li>
-        <li class="nav-item"><a class="nav-link" href="cardapio.html">Menu</a></li>
-        <li class="nav-item"><a class="nav-link" href="carrinho.html">Meu Pedido</a></li>
-        <li class="nav-item"><a class="nav-link" href="quemsomos.html">Quem Somos</a></li>
-        <li class="nav-item"><a class="nav-link" href="carrinho.html">Carrinho</a></li>
+        <li class="nav-item">
+          <a class="nav-link active" href="index.html">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="cardapio.html">Menu</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="carrinho.html">Meu Pedido</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="quemsomos.html">Quem Somos</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="admin.html">Admin</a>
+        </li>
       </ul>
     </div>
   </div>
 </nav>
 
-    <div class="container mt-4">
-        <h2>Carrinho de Compras</h2>
-        <ul id="carrinho-itens" class="list-group mb-3">
-            <!-- Itens do carrinho via JS -->
+<div class="container mt-4">
+    <div class="card">
+        <div class="card-header">
+            <h4>Seu carrinho</h4>
+        </div>
+        <ul id="carrinho-itens" class="list-group list-group-flush">
+            <!-- Itens do carrinho vão aqui -->
         </ul>
-        <h4>Total: R$ <span id="total-carrinho">0.00</span></h4>
+        <div class="card-footer">
+            <h5>Total: R$ <span id="total-carrinho">0.00</span></h5>
+        </div>
     </div>
+</div>
 
     <script src="js/script.js"></script>
     <script>

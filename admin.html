@@ -9,24 +9,40 @@
 </head>
 <body>
 
-    <!-- Navbar -->
+<!-- Navbar -->
 <nav class="navbar navbar-expand-lg navbar-dark shadow">
   <div class="container-fluid">
     <a class="navbar-brand" href="#">WhiskIt</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#navbarNav"
+    >
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav ms-auto">
-        <li class="nav-item"><a class="nav-link active" href="index.html">Home</a></li>
-        <li class="nav-item"><a class="nav-link" href="cardapio.html">Menu</a></li>
-        <li class="nav-item"><a class="nav-link" href="carrinho.html">Meu Pedido</a></li>
-        <li class="nav-item"><a class="nav-link" href="quemsomos.html">Quem Somos</a></li>
-        <li class="nav-item"><a class="nav-link" href="carrinho.html">Carrinho</a></li>
+        <li class="nav-item">
+          <a class="nav-link active" href="index.html">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="cardapio.html">Menu</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="carrinho.html">Meu Pedido</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="quemsomos.html">Quem Somos</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="admin.html">Admin</a>
+        </li>
       </ul>
     </div>
   </div>
 </nav>
+
     <div class="container mt-4">
         <h2>Gerenciar Pratos</h2>
 
@@ -45,6 +61,10 @@
                 <input type="text" class="form-control" id="categoria" required>
             </div>
             <button type="submit" class="btn btn-success">Adicionar Prato</button>
+            <div class="mb-3">
+                <label for="imagem" class="form-label">Imagem do Prato:</label>
+                <input type="file" class="form-control" id="imagem" accept="image/*" />
+            </div>
         </form>
 
         <h3 class="mt-4">Lista de Pratos</h3>

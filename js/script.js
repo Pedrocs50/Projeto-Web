@@ -50,14 +50,44 @@ function exibirPratos() {
     });
 }
 
-// ===== Adicionar ao Carrinho =====
 function adicionarCarrinho(index) {
     const pratos = getPratos();
     const carrinho = getCarrinho();
 
+    if (index < 0 || index >= pratos.length) {
+        alert("Prato inválido!");
+        return;
+    }
+
     carrinho.push(pratos[index]);
     salvarCarrinho(carrinho);
-    alert('Prato adicionado ao carrinho!');
+    alert(`Prato "${pratos[index].nome}" adicionado ao carrinho!`);
+}
+
+function adicionarPrato() {
+    const nome = document.getElementById('nome').value;
+    const preco = parseFloat(document.getElementById('preco').value);
+    const categoria = document.getElementById('categoria').value;
+    const inputImagem = document.getElementById('imagem');
+    
+    function salvarComImagem(imagemDataUrl) {
+        const pratos = getPratos();
+        pratos.push({ nome, preco, categoria, imagem: imagemDataUrl });
+        salvarPratos(pratos);
+
+        document.getElementById('form-prato').reset();
+        carregarListaAdmin();
+    }
+
+    if (inputImagem.files && inputImagem.files[0]) {
+        const reader = new FileReader();
+        reader.onload = function(e) {
+            salvarComImagem(e.target.result);
+        };
+        reader.readAsDataURL(inputImagem.files[0]); // converte para base64
+    } else {
+        salvarComImagem(null); // sem imagem
+    }
 }
 
 // ===== Favoritar Prato =====
@@ -81,12 +111,19 @@ function exibirCarrinho() {
 
     carrinho.forEach((item, index) => {
         total += item.preco;
+
         const li = document.createElement('li');
-        li.className = 'list-group-item';
+        li.className = 'list-group-item d-flex align-items-center';
+
         li.innerHTML = `
-            ${item.nome} - R$ ${item.preco.toFixed(2)}
-            <button class="btn btn-danger btn-sm" onclick="removerDoCarrinho(${index})">Remover</button>
+            <img src="${item.imagem || 'assets/imagens/placeholder.jpg'}" alt="${item.nome}" style="width: 60px; height: 60px; object-fit: cover; border-radius: 5px; margin-right: 15px;">
+            <div class="flex-grow-1">
+                <div><strong>${item.nome}</strong></div>
+                <div>R$ ${item.preco.toFixed(2)}</div>
+            </div>
+            <button class="btn btn-danger btn-sm ms-3" onclick="removerDoCarrinho(${index})">Remover</button>
         `;
+
         lista.appendChild(li);
     });
 
@@ -144,19 +181,6 @@ function inicializarAdmin() {
             adicionarPrato();
         });
     }
-    carregarListaAdmin();
-}
-
-function adicionarPrato() {
-    const nome = document.getElementById('nome').value;
-    const preco = parseFloat(document.getElementById('preco').value);
-    const categoria = document.getElementById('categoria').value;
-
-    const pratos = getPratos();
-    pratos.push({ nome, preco, categoria });
-    salvarPratos(pratos);
-
-    document.getElementById('form-prato').reset();
     carregarListaAdmin();
 }
 
